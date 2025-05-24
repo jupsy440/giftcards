@@ -3,208 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusive Gift Card Offers</title>
+    <title>Claim Your Gift Cards Now!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f7f7f7;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        h1 {
-            color: #e63946;
-            margin-bottom: 10px;
+            background: linear-gradient(135deg, #38bdf8, #34d399);
         }
         .countdown {
-            background: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            border-radius: 8px;
-            margin: 20px 0;
-            font-size: 18px;
+            font-variant-numeric: tabular-nums;
         }
-        #countdown {
-            font-size: 28px;
-            font-weight: bold;
-            color: #ffd166;
-            margin: 10px 0;
+        .card {
+            transition: transform 0.3s ease-in-out;
         }
-        .offer {
-            background: #f1faee;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 5px solid #e63946;
-        }
-        .offer h2 {
-            margin-top: 0;
-            color: #1d3557;
-        }
-        .offer ul {
-            padding-left: 20px;
-        }
-        .offer li {
-            margin-bottom: 8px;
-        }
-        .btn {
-            display: inline-block;
-            background: #e63946;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: background 0.3s;
-        }
-        .btn:hover {
-            background: #c1121f;
-        }
-        .testimonials {
-            margin: 30px 0;
-        }
-        .testimonial {
-            background: #f1faee;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            font-style: italic;
-            position: relative;
-        }
-        .testimonial:before {
-            content: """;
-            font-size: 40px;
-            color: #a8dadc;
-            position: absolute;
-            left: 10px;
-            top: -10px;
-        }
-        .author {
-            font-weight: bold;
-            text-align: right;
-            color: #1d3557;
-        }
-        .disclaimer {
-            font-size: 12px;
-            color: #666;
-            text-align: center;
-            margin-top: 30px;
+        .card:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Exclusive Gift Card Offers</h1>
-            <p>Limited time only - Claim yours today!</p>
-        </header>
-
-        <div class="countdown">
-            <div>Time remaining to claim your gift card:</div>
-            <div id="countdown">05:00:00</div>
+<body class="flex items-center justify-center min-h-screen py-8">
+    <div class="bg-white p-8 rounded-xl shadow-2xl max-w-2xl w-full text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-6">Relieve Financial Stress with Free Gift Cards!</h1>
+        <p class="text-lg text-gray-600 mb-8">Due to the high cost of living, we’re giving away <strong>time-limited</strong> gift cards to help families like yours. Don’t miss out!</p>
+        
+        <!-- Countdown Timer -->
+        <div class="mb-8">
+            <p class="text-xl font-semibold text-orange-600">Hurry! Offer Expires In:</p>
+            <div id="countdown" class="countdown text-3xl font-mono text-orange-600"></div>
         </div>
 
-        <div class="offer">
-            <h2>$750 Temu Gift Card</h2>
-            <ul>
-                <li>Shop for electronics, clothes, home goods and more</li>
-                <li>No restrictions - spend it on anything at Temu</li>
-                <li>Instant digital delivery to your email</li>
-                <li>Combine with other promotions for bigger savings</li>
-            </ul>
-            <a href="#claim-temu" class="btn">Claim Your $750 Card Now</a>
-        </div>
+        <!-- Device Check Message -->
+        <p id="device-message" class="text-sm text-red-600 mb-6 hidden">Please use an Android device to claim these offers.</p>
 
-        <div class="offer">
-            <h2>$500 Aldi Gift Card</h2>
-            <ul>
-                <li>Stock up on groceries and household essentials</li>
-                <li>Use at any Aldi location nationwide</li>
-                <li>No expiration date - use when you want</li>
-                <li>Perfect for weekly shopping trips</li>
-            </ul>
-            <a href="#claim-aldi" class="btn">Get Your $500 Card Now</a>
-        </div>
-
-        <div class="offer">
-            <h2>$250 Walmart Gift Card</h2>
-            <ul>
-                <li>Buy groceries, electronics, home goods and more</li>
-                <li>Use in-store or online at Walmart.com</li>
-                <li>Instant email delivery - use it today</li>
-                <li>Accepted at all Walmart locations</li>
-            </ul>
-            <a href="#claim-walmart" class="btn">Grab Your $250 Card Now</a>
-        </div>
-
-        <div class="testimonials">
-            <h3>What People Are Saying:</h3>
-            <div class="testimonial">
-                "I couldn't believe it was real! Got my $750 Temu Gift Card in minutes. Thank you!"
-                <div class="author">- Sarah J., Texas</div>
+        <!-- Gift Card Offers -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- Temu Gift Card -->
+            <div class="card bg-blue-50 p-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold text-blue-700">$750 Temu Gift Card</h2>
+                <p class="text-gray-600 mb-4">Shop your favorites at Temu!</p>
+                <a href="https://singingfiles.com/show.php?l=0&u=2394717&id=67722" 
+                   class="cta-button bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Claim Now!
+                </a>
             </div>
-            <div class="testimonial">
-                "The $500 Aldi card helped our family through a tough month. So grateful for this program!"
-                <div class="author">- The Rodriguez Family, Florida</div>
+            <!-- Aldi Gift Card -->
+            <div class="card bg-green-50 p-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold text-green-700">$500 Aldi Gift Card</h2>
+                <p class="text-gray-600 mb-4">Stock up on groceries at Aldi!</p>
+                <a href="https://singingfiles.com/show.php?l=0&u=2394717&id=67668" 
+                   class="cta-button bg-green-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-700 transition duration-300">
+                    Claim Now!
+                </a>
             </div>
-            <div class="testimonial">
-                "As a college student, the Walmart card was a lifesaver. Got all my dorm essentials!"
-                <div class="author">- Tyler M., New York</div>
+            <!-- Walmart Gift Card -->
+            <div class="card bg-orange-50 p-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold text-orange-700">Walmart Gift Card</h2>
+                <p class="text-gray-600 mb-4">Shop everything at Walmart!</p>
+                <a href="https://singingfiles.com/show.php?l=0&u=2394717&id=68544" 
+                   class="cta-button bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-orange-700 transition duration-300">
+                    Claim Now!
+                </a>
             </div>
         </div>
 
-        <div class="disclaimer">
-            *This is an independent promotion. Limited quantities available. By clicking, you agree to our terms. 
-            Gift cards are delivered digitally while supplies last. Available to US residents only.
+        <!-- Testimonials -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">What People Are Saying</h2>
+            <div class="space-y-4">
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p class="text-gray-600 italic">"I claimed my Temu gift card and got amazing deals! So easy!"</p>
+                    <p class="text-gray-800 font-semibold mt-2">– Sarah M., Texas</p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p class="text-gray-600 italic">"The Aldi card helped my family save on groceries. Thank you!"</p>
+                    <p class="text-gray-800 font-semibold mt-2">– James R., Florida</p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p class="text-gray-600 italic">"Got my Walmart card in no time. Highly recommend!"</p>
+                    <p class="text-gray-800 font-semibold mt-2">– Emily K., California</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Offer Details -->
+        <div class="text-sm text-gray-500">
+            <p>Offers available only for Android users in the United States. Time-limited offer, act now!</p>
         </div>
     </div>
 
     <script>
-        // Countdown timer (5 hours)
-        function startCountdown() {
-            let timeLeft = 5 * 60 * 60; // 5 hours in seconds
-            const countdownElement = document.getElementById('countdown');
-            
-            function updateTimer() {
-                const hours = Math.floor(timeLeft / 3600);
-                const minutes = Math.floor((timeLeft % 3600) / 60);
-                const seconds = timeLeft % 60;
-                
-                countdownElement.textContent = 
-                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-                
-                if (timeLeft > 0) {
-                    timeLeft--;
-                    setTimeout(updateTimer, 1000);
-                } else {
-                    countdownElement.textContent = "OFFER EXPIRED";
-                    document.querySelectorAll('.btn').forEach(button => {
-                        button.style.backgroundColor = '#999';
-                        button.style.pointerEvents = 'none';
-                    });
-                }
-            }
-            
-            updateTimer();
+        // Device Detection
+        function isAndroid() {
+            return /Android/i.test(navigator.userAgent);
         }
-        
-        // Start countdown when page loads
-        window.addEventListener('DOMContentLoaded', startCountdown);
+
+        // Disable CTAs if not Android
+        if (!isAndroid()) {
+            document.getElementById('device-message').classList.remove('hidden');
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            ctaButtons.forEach(button => {
+                button.classList.add('opacity-50', 'pointer-events-none');
+            });
+        }
+
+        // Countdown Timer
+        function startCountdown() {
+            // Set countdown to 24 hours from now
+            const endTime = new Date().getTime() + 24 * 60 * 60 * 1000;
+            const countdownElement = document.getElementById('countdown');
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const timeLeft = endTime - now;
+
+                if (timeLeft <= 0) {
+                    countdownElement.textContent = 'Offers Expired!';
+                    const ctaButtons = document.querySelectorAll('.cta-button');
+                    ctaButtons.forEach(button => {
+                        button.classList.add('opacity-50', 'pointer-events-none');
+                    });
+                    return;
+                }
+
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                countdownElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+
+        startCountdown();
     </script>
 </body>
 </html>
