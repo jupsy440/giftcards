@@ -3,140 +3,386 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claim Your Gift Cards Now!</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>🎁 URGENT: $750 Temu + $500 Aldi + Walmart Gift Cards - Claim Before They're Gone!</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #38bdf8, #34d399);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
         }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .urgent-header {
+            background: linear-gradient(45deg, #ff4444, #cc0000);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .main-content {
+            padding: 30px 25px;
+        }
+        
+        .headline {
+            color: #333;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .subheadline {
+            color: #666;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .gift-card-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gift-card-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .gift-card-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .gift-card-value {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .claim-button {
+            display: block;
+            background: linear-gradient(45deg, #ff6b6b, #ff4757);
+            color: white;
+            text-decoration: none;
+            padding: 18px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            text-align: center;
+            margin: 20px auto;
+            box-shadow: 0 8px 25px rgba(255, 71, 87, 0.4);
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+            max-width: 280px;
+        }
+        
+        .claim-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(255, 71, 87, 0.6);
+            color: white;
+            text-decoration: none;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-5px); }
+            60% { transform: translateY(-3px); }
+        }
+        
+        .timer-section {
+            background: #ffebee;
+            border: 2px solid #ff5722;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .timer-text {
+            color: #d32f2f;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
         .countdown {
-            font-variant-numeric: tabular-nums;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
-        .card {
-            transition: transform 0.3s ease-in-out;
+        
+        .countdown-item {
+            background: #ff5722;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 50px;
+            text-align: center;
         }
-        .card:hover {
-            transform: scale(1.05);
+        
+        .countdown-number {
+            font-size: 24px;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .urgency-text {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            color: #856404;
+            font-weight: bold;
+        }
+        
+        .social-proof {
+            background: #e8f5e8;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+        }
+        
+        .highlight {
+            background: #ffff00;
+            color: #000;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .red-text {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 600px) {
+            .main-content {
+                padding: 20px 15px;
+            }
+            
+            .headline {
+                font-size: 24px;
+            }
+            
+            .gift-card-value {
+                font-size: 28px;
+            }
+            
+            .claim-button {
+                font-size: 16px;
+                padding: 15px 25px;
+            }
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen py-8">
-    <div class="bg-white p-8 rounded-xl shadow-2xl max-w-2xl w-full text-center">
-        <h1 class="text-4xl font-bold text-gray-800 mb-6">Relieve Financial Stress with Free Gift Cards!</h1>
-        <p class="text-lg text-gray-600 mb-8">Due to the high cost of living, we’re giving away <strong>time-limited</strong> gift cards to help families like yours. Don’t miss out!</p>
+<body>
+    <div class="email-container">
+        <div class="urgent-header">
+            🚨 URGENT: Limited Time Gift Card Distribution - Act Fast! 🚨
+        </div>
         
-        <!-- Countdown Timer -->
-        <div class="mb-8">
-            <p class="text-xl font-semibold text-orange-600">Hurry! Offer Expires In:</p>
-            <div id="countdown" class="countdown text-3xl font-mono text-orange-600"></div>
-        </div>
-
-        <!-- Device Check Message -->
-        <p id="device-message" class="text-sm text-red-600 mb-6 hidden">Please use an Android device to claim these offers.</p>
-
-        <!-- Gift Card Offers -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <!-- Temu Gift Card -->
-            <div class="card bg-blue-50 p-4 rounded-lg shadow-md">
-                <h2 class="text-xl font-semibold text-blue-700">$750 Temu Gift Card</h2>
-                <p class="text-gray-600 mb-4">Shop your favorites at Temu!</p>
-                <a href="https://singingfiles.com/show.php?l=0&u=2394717&id=67722" 
-                   class="cta-button bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
-                    Claim Now!
-                </a>
-            </div>
-            <!-- Aldi Gift Card -->
-            <div class="card bg-green-50 p-4 rounded-lg shadow-md">
-                <h2 class="text-xl font-semibold text-green-700">$500 Aldi Gift Card</h2>
-                <p class="text-gray-600 mb-4">Stock up on groceries at Aldi!</p>
-                <a href="https://singingfiles.com/show.php?l=0&u=2394717&id=67668" 
-                   class="cta-button bg-green-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-700 transition duration-300">
-                    Claim Now!
-                </a>
-            </div>
-            <!-- Walmart Gift Card -->
-            <div class="card bg-orange-50 p-4 rounded-lg shadow-md">
-                <h2 class="text-xl font-semibold text-orange-700">Walmart Gift Card</h2>
-                <p class="text-gray-600 mb-4">Shop everything at Walmart!</p>
-                <a href="https://singingfiles.com/show.php?l=0&u=2394717&id=68544" 
-                   class="cta-button bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-orange-700 transition duration-300">
-                    Claim Now!
-                </a>
-            </div>
-        </div>
-
-        <!-- Testimonials -->
-        <div class="mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">What People Are Saying</h2>
-            <div class="space-y-4">
-                <div class="bg-gray-100 p-4 rounded-lg">
-                    <p class="text-gray-600 italic">"I claimed my Temu gift card and got amazing deals! So easy!"</p>
-                    <p class="text-gray-800 font-semibold mt-2">– Sarah M., Texas</p>
-                </div>
-                <div class="bg-gray-100 p-4 rounded-lg">
-                    <p class="text-gray-600 italic">"The Aldi card helped my family save on groceries. Thank you!"</p>
-                    <p class="text-gray-800 font-semibold mt-2">– James R., Florida</p>
-                </div>
-                <div class="bg-gray-100 p-4 rounded-lg">
-                    <p class="text-gray-600 italic">"Got my Walmart card in no time. Highly recommend!"</p>
-                    <p class="text-gray-800 font-semibold mt-2">– Emily K., California</p>
+        <div class="main-content">
+            <h1 class="headline">
+                🎁 Emergency Financial Relief Program<br>
+                <span class="highlight">$1,750+ in FREE Gift Cards</span>
+            </h1>
+            
+            <p class="subheadline">
+                Due to the high cost of living and financial difficulties families are facing, we're providing emergency gift card assistance to qualifying individuals.
+            </p>
+            
+            <div class="timer-section">
+                <div class="timer-text">⏰ OFFER EXPIRES IN:</div>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">11</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">42</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">18</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
                 </div>
             </div>
+            
+            <!-- TEMU GIFT CARD -->
+            <div class="gift-card-section" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53);">
+                <div class="gift-card-title">🛍️ TEMU Shopping Spree</div>
+                <div class="gift-card-value">$750 Gift Card</div>
+                <p style="text-align: center; margin-bottom: 20px;">Shop for everything your family needs - electronics, home goods, clothing & more!</p>
+                <a href="https://singingfiles.com/show.php?l=0&u=2394717&id=67722" class="claim-button">
+                    🎯 CLAIM $750 TEMU CARD NOW
+                </a>
+            </div>
+            
+            <!-- ALDI GIFT CARD -->
+            <div class="gift-card-section" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                <div class="gift-card-title">🥘 Grocery Relief Program</div>
+                <div class="gift-card-value">$500 Aldi Card</div>
+                <p style="text-align: center; margin-bottom: 20px;">Feed your family with quality groceries at unbeatable prices!</p>
+                <a href="https://singingfiles.com/show.php?l=0&u=2394717&id=67668" class="claim-button">
+                    🍎 GRAB $500 ALDI CARD NOW
+                </a>
+            </div>
+            
+            <!-- WALMART GIFT CARD -->
+            <div class="gift-card-section" style="background: linear-gradient(135deg, #a8edea, #fed6e3);">
+                <div class="gift-card-title">🏪 Essential Supplies Card</div>
+                <div class="gift-card-value">Walmart Gift Card</div>
+                <p style="text-align: center; margin-bottom: 20px;">Get everything from groceries to household essentials in one convenient location!</p>
+                <a href="https://singingfiles.com/show.php?l=0&u=2394717&id=68544" class="claim-button">
+                    🛒 CLAIM WALMART CARD NOW
+                </a>
+            </div>
+            
+            <div class="urgency-text">
+                ⚡ <span class="red-text">BREAKING:</span> Only 247 gift cards remaining in this batch! 
+                These cards are being claimed every few minutes. Don't miss out!
+            </div>
+            
+            <div class="social-proof">
+                💬 "I just received my $750 Temu card and already ordered so much stuff for my kids! This is absolutely legitimate and saved my family during tough times." - Jennifer M., Manchester
+            </div>
+            
+            <div class="social-proof">
+                💬 "Got my Aldi card yesterday and did a full grocery shop. My family is eating well thanks to this program!" - David R., Birmingham  
+            </div>
+            
+            <div style="background: #ffebee; border: 2px solid #f44336; border-radius: 10px; padding: 20px; margin: 25px 0; text-align: center;">
+                <h3 style="color: #d32f2f; margin-top: 0;">⚠️ IMPORTANT NOTICE ⚠️</h3>
+                <p style="margin-bottom: 0; font-weight: bold;">
+                    This emergency relief program is <span class="highlight">TIME-LIMITED</span> and available on a first-come, first-served basis. 
+                    Cards are being distributed to help families cope with rising costs. 
+                    <span class="red-text">Claim yours before they run out!</span>
+                </p>
+            </div>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <h3 style="color: #333;">✅ Why Families Choose Our Program:</h3>
+                <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
+                    <li>✓ <strong>100% Free</strong> - No hidden fees or charges</li>
+                    <li>✓ <strong>Instant Access</strong> - Use immediately after claiming</li>
+                    <li>✓ <strong>No Credit Check</strong> - Available to everyone</li>
+                    <li>✓ <strong>Legitimate Program</strong> - Thousands already helped</li>
+                </ul>
+            </div>
+            
+            <div style="background: linear-gradient(45deg, #ff9a9e, #fecfef); border-radius: 15px; padding: 25px; text-align: center; margin: 25px 0;">
+                <h3 style="margin-top: 0; color: #333;">🎯 Final Call - Don't Wait!</h3>
+                <p style="font-size: 18px; margin-bottom: 20px;">
+                    These gift cards are helping families put food on the table and essential items in their homes. 
+                    <strong>Your family deserves this relief too!</strong>
+                </p>
+                <p style="font-size: 16px; color: #666;">
+                    Click any button above to claim your cards now - it takes less than 2 minutes and could save your family hundreds of dollars this month.
+                </p>
+            </div>
         </div>
-
-        <!-- Offer Details -->
-        <div class="text-sm text-gray-500">
-            <p>Offers available only for Android users in the United States. Time-limited offer, act now!</p>
+        
+        <div class="footer">
+            This is a limited-time financial relief initiative. Gift cards are subject to availability and distributed on a first-come, first-served basis.
         </div>
     </div>
-
+    
     <script>
-        // Device Detection
-        function isAndroid() {
-            return /Android/i.test(navigator.userAgent);
-        }
-
-        // Disable CTAs if not Android
-        if (!isAndroid()) {
-            document.getElementById('device-message').classList.remove('hidden');
-            const ctaButtons = document.querySelectorAll('.cta-button');
-            ctaButtons.forEach(button => {
-                button.classList.add('opacity-50', 'pointer-events-none');
-            });
-        }
-
         // Countdown Timer
-        function startCountdown() {
-            // Set countdown to 24 hours from now
-            const endTime = new Date().getTime() + 24 * 60 * 60 * 1000;
-            const countdownElement = document.getElementById('countdown');
-
-            function updateCountdown() {
-                const now = new Date().getTime();
-                const timeLeft = endTime - now;
-
-                if (timeLeft <= 0) {
-                    countdownElement.textContent = 'Offers Expired!';
-                    const ctaButtons = document.querySelectorAll('.cta-button');
-                    ctaButtons.forEach(button => {
-                        button.classList.add('opacity-50', 'pointer-events-none');
-                    });
-                    return;
+        function updateCountdown() {
+            let hours = parseInt(document.getElementById('hours').textContent);
+            let minutes = parseInt(document.getElementById('minutes').textContent);
+            let seconds = parseInt(document.getElementById('seconds').textContent);
+            
+            seconds--;
+            
+            if (seconds < 0) {
+                seconds = 59;
+                minutes--;
+                
+                if (minutes < 0) {
+                    minutes = 59;
+                    hours--;
+                    
+                    if (hours < 0) {
+                        // Reset to create continuous urgency
+                        hours = 11;
+                        minutes = 59;
+                        seconds = 59;
+                    }
                 }
-
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-                countdownElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
             }
-
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
+            
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
         }
-
-        startCountdown();
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        
+        // Track link clicks (for analytics)
+        document.querySelectorAll('a[href*="singingfiles.com"]').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('Gift card link clicked:', this.href);
+            });
+        });
     </script>
 </body>
 </html>
