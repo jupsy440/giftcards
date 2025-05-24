@@ -3,73 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Limited-Time Gift Card Offers</title>
+    <title>Exclusive Gift Card Offers</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
+            padding: 20px;
+            background-color: #f7f7f7;
             color: #333;
+            line-height: 1.6;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
-            color: white;
-            text-align: center;
+            background: white;
             padding: 30px;
             border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
             margin-bottom: 30px;
         }
+        h1 {
+            color: #e63946;
+            margin-bottom: 10px;
+        }
         .countdown {
-            background-color: #333;
+            background: #333;
             color: white;
             padding: 15px;
             text-align: center;
             border-radius: 8px;
             margin: 20px 0;
+            font-size: 18px;
         }
         #countdown {
             font-size: 28px;
             font-weight: bold;
-            color: #ffeb3b;
+            color: #ffd166;
+            margin: 10px 0;
         }
-        .offer-card {
-            background: white;
-            border-radius: 10px;
+        .offer {
+            background: #f1faee;
+            border-radius: 8px;
             padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid #e63946;
         }
-        .offer-card h2 {
-            color: #ff6b6b;
+        .offer h2 {
             margin-top: 0;
+            color: #1d3557;
         }
-        .cta-button {
-            display: block;
-            background: #ff6b6b;
+        .offer ul {
+            padding-left: 20px;
+        }
+        .offer li {
+            margin-bottom: 8px;
+        }
+        .btn {
+            display: inline-block;
+            background: #e63946;
             color: white;
-            text-align: center;
-            padding: 12px;
-            border-radius: 5px;
+            padding: 12px 25px;
             text-decoration: none;
+            border-radius: 5px;
             font-weight: bold;
             margin-top: 15px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #c1121f;
+        }
+        .testimonials {
+            margin: 30px 0;
         }
         .testimonial {
-            background: #f9f9f9;
+            background: #f1faee;
             padding: 15px;
             border-radius: 8px;
-            margin: 15px 0;
+            margin-bottom: 15px;
             font-style: italic;
+            position: relative;
+        }
+        .testimonial:before {
+            content: """;
+            font-size: 40px;
+            color: #a8dadc;
+            position: absolute;
+            left: 10px;
+            top: -10px;
+        }
+        .author {
+            font-weight: bold;
+            text-align: right;
+            color: #1d3557;
         }
         .disclaimer {
             font-size: 12px;
-            color: #777;
+            color: #666;
             text-align: center;
             margin-top: 30px;
         }
@@ -78,79 +110,101 @@
 <body>
     <div class="container">
         <header>
-            <h1>Limited-Time Gift Card Offers</h1>
-            <p>Claim your free gift card today!</p>
+            <h1>Exclusive Gift Card Offers</h1>
+            <p>Limited time only - Claim yours today!</p>
         </header>
 
         <div class="countdown">
-            <div>Offer expires in:</div>
+            <div>Time remaining to claim your gift card:</div>
             <div id="countdown">05:00:00</div>
         </div>
 
-        <div class="offer-card">
+        <div class="offer">
             <h2>$750 Temu Gift Card</h2>
-            <p>Shop for electronics, clothes, home goods and more!</p>
             <ul>
-                <li>No restrictions</li>
-                <li>Instant digital delivery</li>
-                <li>Limited time offer</li>
+                <li>Shop for electronics, clothes, home goods and more</li>
+                <li>No restrictions - spend it on anything at Temu</li>
+                <li>Instant digital delivery to your email</li>
+                <li>Combine with other promotions for bigger savings</li>
             </ul>
-            <a href="https://example.com/temu" class="cta-button">Claim Your $750 Card</a>
+            <a href="#claim-temu" class="btn">Claim Your $750 Card Now</a>
         </div>
 
-        <div class="offer-card">
+        <div class="offer">
             <h2>$500 Aldi Gift Card</h2>
-            <p>Stock up on groceries and essentials!</p>
             <ul>
-                <li>Use at any Aldi location</li>
-                <li>No expiration date</li>
-                <li>While supplies last</li>
+                <li>Stock up on groceries and household essentials</li>
+                <li>Use at any Aldi location nationwide</li>
+                <li>No expiration date - use when you want</li>
+                <li>Perfect for weekly shopping trips</li>
             </ul>
-            <a href="https://example.com/aldi" class="cta-button">Get Your $500 Card</a>
+            <a href="#claim-aldi" class="btn">Get Your $500 Card Now</a>
         </div>
 
-        <div class="offer-card">
+        <div class="offer">
             <h2>$250 Walmart Gift Card</h2>
-            <p>Buy groceries, tech, and home goods!</p>
             <ul>
-                <li>Use in-store or online</li>
-                <li>Instant delivery</li>
-                <li>Limited quantities</li>
+                <li>Buy groceries, electronics, home goods and more</li>
+                <li>Use in-store or online at Walmart.com</li>
+                <li>Instant email delivery - use it today</li>
+                <li>Accepted at all Walmart locations</li>
             </ul>
-            <a href="https://example.com/walmart" class="cta-button">Grab Your $250 Card</a>
+            <a href="#claim-walmart" class="btn">Grab Your $250 Card Now</a>
         </div>
 
-        <div class="testimonial">
-            "I got my Temu gift card in minutes! This is amazing!"
-            <div>- Sarah J.</div>
+        <div class="testimonials">
+            <h3>What People Are Saying:</h3>
+            <div class="testimonial">
+                "I couldn't believe it was real! Got my $750 Temu Gift Card in minutes. Thank you!"
+                <div class="author">- Sarah J., Texas</div>
+            </div>
+            <div class="testimonial">
+                "The $500 Aldi card helped our family through a tough month. So grateful for this program!"
+                <div class="author">- The Rodriguez Family, Florida</div>
+            </div>
+            <div class="testimonial">
+                "As a college student, the Walmart card was a lifesaver. Got all my dorm essentials!"
+                <div class="author">- Tyler M., New York</div>
+            </div>
         </div>
 
         <div class="disclaimer">
-            *This is an independent promotion. Limited quantities available.
+            *This is an independent promotion. Limited quantities available. By clicking, you agree to our terms. 
+            Gift cards are delivered digitally while supplies last. Available to US residents only.
         </div>
     </div>
 
     <script>
         // Countdown timer (5 hours)
-        let timeLeft = 5 * 60 * 60;
-        
-        function updateCountdown() {
-            const hours = Math.floor(timeLeft / 3600);
-            const minutes = Math.floor((timeLeft % 3600) / 60);
-            const seconds = timeLeft % 60;
+        function startCountdown() {
+            let timeLeft = 5 * 60 * 60; // 5 hours in seconds
+            const countdownElement = document.getElementById('countdown');
             
-            document.getElementById('countdown').textContent = 
-                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            
-            if (timeLeft > 0) {
-                timeLeft--;
-                setTimeout(updateCountdown, 1000);
-            } else {
-                document.getElementById('countdown').textContent = "OFFER EXPIRED";
+            function updateTimer() {
+                const hours = Math.floor(timeLeft / 3600);
+                const minutes = Math.floor((timeLeft % 3600) / 60);
+                const seconds = timeLeft % 60;
+                
+                countdownElement.textContent = 
+                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    setTimeout(updateTimer, 1000);
+                } else {
+                    countdownElement.textContent = "OFFER EXPIRED";
+                    document.querySelectorAll('.btn').forEach(button => {
+                        button.style.backgroundColor = '#999';
+                        button.style.pointerEvents = 'none';
+                    });
+                }
             }
+            
+            updateTimer();
         }
         
-        updateCountdown();
+        // Start countdown when page loads
+        window.addEventListener('DOMContentLoaded', startCountdown);
     </script>
 </body>
 </html>
